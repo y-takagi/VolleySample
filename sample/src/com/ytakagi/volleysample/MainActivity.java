@@ -1,16 +1,21 @@
 
 package com.ytakagi.volleysample;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
+import android.widget.ListView;
 
 public class MainActivity extends Activity {
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        listView = (ListView) findViewById(R.id.list_view);
+        PopularItemsAdapter adapter = new PopularItemsAdapter(getApplicationContext());
+        listView.setAdapter(adapter);
     }
 
     @Override
