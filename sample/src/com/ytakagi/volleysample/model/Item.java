@@ -6,7 +6,6 @@ import java.util.Locale;
 
 import lombok.Data;
 
-import com.android.volley.Request.Method;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
 import com.ytakagi.volleysample.network.RestClient;
@@ -22,6 +21,6 @@ public class Item {
     public static void popularItems(int page, int limit, Listener<String> successListener, ErrorListener errorListener) {
         String path = "items/popular.json";
         String params = String.format(Locale.getDefault(), "?page=%d&limit=%d", page, limit);
-        RestClient.execute(Method.GET, path + params, successListener, errorListener);
+        RestClient.execute(path + params, successListener, errorListener);
     }
 }
